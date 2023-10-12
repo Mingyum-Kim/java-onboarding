@@ -30,7 +30,10 @@ class Problem1 {
     private static boolean isOutOfRange(List<Integer> pages){
         return (pages.get(0) < 1 || pages.get(0) > 400) || (pages.get(1) < 1 || pages.get(1) > 400);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4fbd35efb0d7a7fc88e3bc79856aac79c56b4f8a
     private static boolean isNotTwoElements(List<Integer> pages){
         return pages.size() != 2;
     }
