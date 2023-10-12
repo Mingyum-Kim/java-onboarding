@@ -14,6 +14,13 @@ public class Problem3 {
     }
 
     private static int count369OfNumber(int number) {
-
+        String numberString = String.valueOf(number);
+        int result = 0;
+        for (char c : numberString.toCharArray()){
+            if(c == '3' || c== '6' || c =='9'){
+                result++;
+            }
+        }
+        return result;
     }
 }
