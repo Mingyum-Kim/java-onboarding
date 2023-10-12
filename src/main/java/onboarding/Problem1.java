@@ -76,7 +76,7 @@ class Problem1 {
     }
 
     private static boolean isNotIntegerList(List<Integer> pages){
-        return pages.get(0).getClass() != Integer.class && pages.get(1).getClass() != Integer.class;
+        return pages.get(0).getClass() != Integer.class || pages.get(1).getClass() != Integer.class;
     }
 
     private static boolean isOutOfRange(List<Integer> pages){
@@ -88,6 +88,6 @@ class Problem1 {
     }
 
     private static boolean isNotSidePage(List<Integer> page) {
-        return page.get(0) + 1  == page.get(1);
+        return page.get(0) + 1  != page.get(1);
     }
 }
