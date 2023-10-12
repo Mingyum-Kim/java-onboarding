@@ -22,6 +22,9 @@ class Problem1 {
         if(isNotTwoElements(pobi) || isNotTwoElements(crong)){
             return EXCEPTION_NUMBER;
         }
+        if(isNotSidePage(pobi) || isNotSidePage(crong)) {
+            return EXCEPTION_NUMBER;
+        }
 
         Integer pobiScore = getLargerScoreFromList(pobi);
         Integer crongScore = getLargerScoreFromList(crong);
@@ -29,6 +32,7 @@ class Problem1 {
         int answer = getAnswerByComparing(pobiScore, crongScore);
         return answer;
     }
+
 
     private static int getAnswerByComparing(Integer pobiScore, Integer crongScore) {
         if(pobiScore > crongScore){
@@ -81,5 +85,9 @@ class Problem1 {
 
     private static boolean isNotTwoElements(List<Integer> pages){
         return pages.size() != 2;
+    }
+
+    private static boolean isNotSidePage(List<Integer> page) {
+        return page.get(0) + 1  == page.get(1);
     }
 }
