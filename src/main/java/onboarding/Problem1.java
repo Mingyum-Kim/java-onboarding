@@ -54,11 +54,21 @@ class Problem1 {
     }
 
     private static Integer computeSumOfDigit(Integer page){
-
+        String pageString = page.toString();
+        Integer result = 0;
+        for(int i = 0; i < pageString.length(); i++){
+            result += Character.getNumericValue(pageString.charAt(i));
+        }
+        return result;
     }
 
     private static Integer computeMultiOfDigit(Integer page){
-
+        String pageString = page.toString();
+        Integer result = 1;
+        for(int i = 0; i < pageString.length(); i++){
+            result *= Character.getNumericValue(pageString.charAt(i));
+        }
+        return result;
     }
 
     private static boolean isNotIntegerList(List<Integer> pages){
