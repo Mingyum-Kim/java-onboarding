@@ -10,17 +10,39 @@ class Problem1 {
         if(isNotIntegerList(pobi) || isNotIntegerList(crong)){
             return EXCEPTION_NUMBER;
         }
-
         if(isOutOfRange(pobi) || isOutOfRange(crong)){
             return EXCEPTION_NUMBER;
         }
-
         if(isNotTwoElements(pobi) || isNotTwoElements(crong)){
             return EXCEPTION_NUMBER;
         }
 
+        Integer pobiScore = getLargerScoreFromList(pobi);
+        Integer crongScore = getLargerScoreFromList(crong);
+
         int answer = 0;
         return answer;
+    }
+
+    private static Integer getLargerScoreFromList(List<Integer> pages){
+        Integer sumDigitOfLeft = computeSumOfDigit(pages.get(0));
+        Integer sumDigitOfRight = computeSumOfDigit(pages.get(1));
+
+        Integer multiDigitOfLeft = computeMultiOfDigit(pages.get(0));
+        Integer multiDigitOfRight = computeMultiOfDigit(pages.get(1));
+
+        return Math.max(
+                Math.max(sumDigitOfLeft, sumDigitOfRight),
+                Math.max(multiDigitOfLeft, multiDigitOfRight)
+        );
+    }
+
+    private static Integer computeSumOfDigit(Integer page){
+
+    }
+
+    private static Integer computeMultiOfDigit(Integer page){
+
     }
 
     private static boolean isNotIntegerList(List<Integer> pages){
