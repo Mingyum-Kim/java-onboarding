@@ -6,6 +6,12 @@ class Problem1 {
 
     private static final Integer EXCEPTION_NUMBER = -1;
 
+    private static final Integer POBY_WIN = 1;
+
+    private static final Integer CRONG_WIN = 2;
+
+    private static final Integer TIE = 0;
+
     public static int solution(List<Integer> pobi, List<Integer> crong) {
         if(isNotIntegerList(pobi) || isNotIntegerList(crong)){
             return EXCEPTION_NUMBER;
@@ -20,8 +26,18 @@ class Problem1 {
         Integer pobiScore = getLargerScoreFromList(pobi);
         Integer crongScore = getLargerScoreFromList(crong);
 
-        int answer = 0;
+        int answer = getAnswerByComparing(pobiScore, crongScore);
         return answer;
+    }
+
+    private static int getAnswerByComparing(Integer pobiScore, Integer crongScore) {
+        if(pobiScore > crongScore){
+            return POBY_WIN;
+        } else if (pobiScore < crongScore){
+            return CRONG_WIN;
+        } else {
+            return TIE;
+        }
     }
 
     private static Integer getLargerScoreFromList(List<Integer> pages){
